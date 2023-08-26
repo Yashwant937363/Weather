@@ -1,0 +1,104 @@
+body {
+    background-color: #bde4f4;
+  }
+  .section {
+    display: grid;
+    grid-gap: 13px;
+    padding: 10px;
+  }
+  .card {
+    background-color: #92d2ed;
+    border-radius: 20px;
+    padding: 13px;
+  }
+  #temp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    grid-gap: 10px;
+  }
+  #temp .feli {
+    margin: 5px;
+  }
+  #temp .temperature {
+    font-size: 45px;
+    text-align: right;
+    padding: 0px 7px;
+  }
+  #temp fieldset {
+    border-radius: 20px;
+    border: 0px;
+    background-color: #66c1e5;
+    margin-top: 60px;
+    padding: 15px;
+  }
+  .compo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    grid-gap: 13px;
+  }
+  .compo > * {
+    aspect-ratio: 3/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .compo .winds {
+    background: url("https://cdn.dribbble.com/users/2581393/screenshots/5685682/media/4365bc7922050003501fd66e798db31c.gif");
+    background-size: cover;
+    background-position: center;
+  }
+  .compo .cloud {
+    background: url("https://i.makeagif.com/media/5-27-2017/2f3f5M.gif");
+    background-size: cover;
+    background-position: center;
+  }
+  .hider{
+    height: 46%;
+    overflow: hidden;
+  }
+  .daynight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid white;
+    width: 80%;
+    aspect-ratio: 1/1;
+    margin: 10% auto;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 30px 0px whitesmoke;
+  }
+  .daynight .sun {
+    display: block;
+    height: 15%;
+    width: 15%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 0px orange;
+    background: radial-gradient(circle, #ffdb58 30%, #fffc7d 70%, #ffd700);
+    position: relative;
+    left: -7%;
+  }
+  .daynight .moon {
+    display: block;
+    height: 15%;
+    width: 15%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px white;
+    background-image: url("https://images.rawpixel.com/image_png_600/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA5L3B4MTQ0NjI3OS1pbWFnZS1qb2I5MjIucG5n.png");
+    background-size: 122%;
+    background-position: center;
+    float: right;
+    position: relative;
+    right: -7%;
+  }
+  .time{
+    display: flex;
+    justify-content: space-between;
+  }
+  .time > * {
+    padding:5px 7%;
+    width: 67px;
+    text-align: center;
+  }
+  
