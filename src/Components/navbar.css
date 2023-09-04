@@ -77,6 +77,8 @@
   }
   #menu {
     display: inline-block;
+    position:relative;
+    top: -5px;
   }
 }
 
@@ -88,7 +90,9 @@
     top: 45px;
   }
 }
-
+.active{
+  text-decoration: underline;
+}
 #togglemenu,
 #togglesearch {
   display: none;
