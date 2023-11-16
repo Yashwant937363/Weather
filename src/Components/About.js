@@ -1,7 +1,6 @@
 import React from 'react';
 
 function AboutSection() {
-  // Define internal CSS styles as an object
   const styles = {
     aboutSection: {
       padding: '20px',
@@ -34,55 +33,70 @@ function AboutSection() {
             The component demonstrates the use of the useState hook to manage various pieces of state within a functional component. State is used to store and update data that can change over time, such as weather information, city name, and styling variables like rotationDegree and direction.
           </p>
         </div>
+
         <div style={styles.term}>
-          <h3 style={styles.heading}>Asynchronous Data Fetching</h3>
+          <h3 style={styles.heading}>Redux Integration</h3>
           <p style={styles.paragraph}>
-            The component showcases how to fetch data asynchronously from external APIs using the fetch function and the async/await pattern. It demonstrates error handling for API requests, ensuring a robust user experience.
+            The component utilizes Redux for state management. Hooks like useSelector and useDispatch are employed to efficiently manage and update the application state.
           </p>
         </div>
+
         <div style={styles.term}>
-          <h3 style={styles.heading}>Lifecycle Management with useEffect</h3>
+          <h3 style={styles.heading}>Asynchronous Data Fetching and Error Handling</h3>
           <p style={styles.paragraph}>
-            useEffect is used to manage the component's lifecycle. The component triggers data fetching and manipulation functions when specific dependencies (e.g., city, weatherData, curDate, Hours, Minutes, sunrise, sunset) change. This ensures that data is updated when needed and avoids unnecessary re-rendering.
+            Asynchronous data fetching is implemented with conditional rendering based on loading status. Error handling ensures a smooth user experience, displaying error messages and providing a reset option.
           </p>
         </div>
 
         <div style={styles.term}>
           <h3 style={styles.heading}>Dynamic Styling with Inline CSS</h3>
           <p style={styles.paragraph}>
-            Inline CSS within the style tag is employed for dynamic styling based on the component's state. For instance, it rotates a day/night indicator (rotationDegree) and changes the flex direction (direction) of a section based on the time of day.
+            Inline styles are used for dynamic styling, such as adjusting the rotation of the day/night indicator and flex direction based on the time of day.
           </p>
         </div>
-        <div style={styles.term}>
-          <h3 style={styles.heading}>Conditional Rendering</h3>
-          <p style={styles.paragraph}>
-            The component conditionally renders content based on the availability of data. If weatherData is null (indicating that data is being fetched), it displays a loading message and spinner. This approach ensures a smooth user experience.
-          </p>
-        </div>
+
         <div style={styles.term}>
           <h3 style={styles.heading}>User Interaction Handling</h3>
           <p style={styles.paragraph}>
-            The component includes a search bar that allows users to input a city name. User input triggers an event handler (updateWeather) that updates the city state and initiates a data fetch.
+            The component includes a search bar allowing users to input a city name. User input triggers an event handler for data fetching and updates.
           </p>
         </div>
+
         <div style={styles.term}>
-          <h3 style={styles.heading}>Data Formatting and Display</h3>
+          <h3 style={styles.heading}>Component Lifecycle Management</h3>
           <p style={styles.paragraph}>
-            It demonstrates how to format and display data fetched from external APIs, including temperature, sunrise/sunset times, wind direction, and more. Data is presented clearly and meaningfully to the user.
+            useEffect is employed to manage side effects, such as updating sunrise and sunset times and calculating the degree of rotation for the day/night indicator.
           </p>
         </div>
+
+        <div style={styles.term}>
+          <h3 style={styles.heading}>Mathematical Calculations</h3>
+          <p style={styles.paragraph}>
+            The component performs mathematical calculations to determine the degree of rotation for the day/night indicator based on sunrise and sunset times.
+          </p>
+        </div>
+
+        <div style={styles.term}>
+          <h3 style={styles.heading}>Additional Weather Information</h3>
+          <p style={styles.paragraph}>
+            Weather-related information, including temperature, feels-like temperature, cloud percentage, wind speed, wind direction, humidity, and sunrise/sunset times, is displayed to provide a comprehensive overview.
+          </p>
+        </div>
+
         <div style={styles.term}>
           <h3 style={styles.heading}>Error Handling</h3>
           <p style={styles.paragraph}>
             The component includes error handling for API requests. It logs error messages to the console and maintains a user-friendly interface even when data fetching fails.
           </p>
         </div>
+
         <div style={styles.term}>
           <h3 style={styles.heading}>Mathematical Calculations</h3>
           <p style={styles.paragraph}>
             The component calculates the degree of rotation for the day/night indicator based on sunrise and sunset times. This involves mathematical calculations to determine the position of the sun/moon icon.
           </p>
         </div>
+
         <div style={styles.term}>
           <h3 style={styles.heading}>Reactivity</h3>
           <p style={styles.paragraph}>
@@ -90,6 +104,7 @@ function AboutSection() {
           </p>
         </div>
       </div>
+
       <div style={styles.aboutSection}>
         <h2>About Weather Data</h2>
         <p>
@@ -167,7 +182,6 @@ function AboutSection() {
         </div>
       </div>
     </>
-
   );
 }
 
