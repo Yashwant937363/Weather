@@ -4,11 +4,19 @@
   --third: #00332d;
 }
 
+.title {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
 .navbar {
+  display: flex;
+  list-style-type: none;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  height: 40px;
+  height: 45px;
 }
 
 .icons {
@@ -16,7 +24,6 @@
   align-items: center;
   justify-content: flex-end;
   position: absolute;
-  top: 6px;
   right: 5px;
 }
 
@@ -32,9 +39,10 @@
   color: var(--first);
 }
 
-.bi-x {
+.icons .bi-x {
   font-size: 30px;
   transform: rotate(180deg);
+  top:-3px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -54,31 +62,57 @@
   text-decoration: none;
 }
 
+#list li .link.active {
+  color: skyblue;
+}
+
 @media (max-width: 500px) {
-  .navbar {
-    height: 40px;
-  }
   #list {
     display: none;
     position: fixed;
     width: 100%;
-    top: 45px;
+    height: 100%;
+    top: 40px;
     left: 0px;
     animation: scrolllist 0.5s ease 0s 1 alternate;
     z-index: 2;
+    backdrop-filter: blur(3px);
   }
-  #list li .link{
+  
+  #list li .link {
     display: block;
     text-align: center;
     background-color: rgb(255, 246, 230, 0.7);
-    color: #001a17;
+    color: black;
     padding: 30px 15px;
-    margin: 5px;
+    margin: 15px;
+    border-radius: 23px;
   }
+  
+  #list li .link:active{
+    transform: scale(0.95);
+  }
+  
+  #list li .active span{
+    color: blue;
+    position: relative;
+    top: 0px;
+    padding-bottom: 2px;
+  }
+
+  #list li .active span::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom:-2px;
+    left:-1px;
+    border: 1px solid blue;
+  }
+
+  
   #menu {
     display: inline-block;
-    position:relative;
-    top: -5px;
+    position: relative;
   }
 }
 

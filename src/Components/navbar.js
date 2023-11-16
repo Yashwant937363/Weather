@@ -9,20 +9,15 @@ function Navbar(props) {
   const handleMenuToggle = () => {
     setIsMenuOpen(prevState => !prevState);
   };
+  
+  const handleNavlinkClick = () => {
+    setIsMenuOpen(false);
+  }
   return (
-  <>
-    <header>
-      <style>
-        {`
-          .navbar {
-            display: flex;
-            list-style-type: none;
-          }
-          .title {
-            position: absolute;
-            left: 5px;
-            top: 5px;
-          }
+    <>
+      <header>
+        <style>
+          {`
           #list{
             display:${isMenuOpen ? 'block' : 'none'};
           }
@@ -32,27 +27,27 @@ function Navbar(props) {
             }
           }
         `}
-      </style>
-      <nav className="navbar">
-        <h1 className="title">{props.title}</h1>
-        <ul id="list">
-          <li>
-            <NavLink className="link" to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink className="link" to="/about">About Us</NavLink>
-          </li>
-        </ul>
-        <div className="icons">
-          <label htmlFor="togglemenu" onClick={handleMenuToggle}>
-            <i className={`bi ${isMenuOpen ? 'bi-x' : 'bi-list'} icon`} id="menu"></i>
-          </label>
-          <input type="checkbox" id="togglemenu" checked={isMenuOpen} readOnly />
-        </div>
-      </nav>
-    </header>
-    <Outlet />
-  </>
+        </style>
+        <nav className="navbar">
+          <h1 className="title">{props.title}</h1>
+          <ul id="list" onClick={handleNavlinkClick}>
+            <li>
+              <NavLink onClick={handleNavlinkClick} className="link" to="/"><span>Home</span></NavLink>
+            </li>
+            <li>
+              <NavLink onClick={handleNavlinkClick} className="link" to="/about"><span>About</span></NavLink>
+            </li>
+          </ul>
+          <div className="icons">
+            <label htmlFor="togglemenu" onClick={handleMenuToggle}>
+              <i className={`bi ${isMenuOpen ? 'bi-x' : 'bi-list'} icon`} id="menu"></i>
+            </label>
+            <input type="checkbox" id="togglemenu" checked={isMenuOpen} readOnly />
+          </div>
+        </nav>
+      </header>
+      <Outlet />
+    </>
   );
 }
 
